@@ -1,4 +1,6 @@
 # Blog 1
 
 This is the page for my first blog
-[Homepage](README.md)
+
+
+[Click Here to Return to Homepage](README.md)
