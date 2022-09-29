@@ -14,8 +14,12 @@ Here is a link to [my LinkedIn](https://www.linkedin.com/in/jerry-xu-ruiqi/) if 
 
 ## Here are links to my blogs
 
-[Blog 1](Blog1.md)
+[Visualization Blog 1](Visualization Blog 1.md)
 
-[Blog 2](Blog2.md)
+[Visualization Blog 2](Visualization Blog 2.md)
 
-[Blog 3](Blog3.md)
+[Visualization Blog 3](Visualization Blog 3.md)
+
+[Short Form Blog 1](Short Form Blog 1.md)
+
+[Short Form Blog 2](Short Form Blog 2.md)
