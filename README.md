@@ -1,8 +1,21 @@
-# Here's my Homepage for Political Science 390
+# Jerry Xu's Homepage for Political Science 390
 
-Here I want to add more information about who I am and what I want to do
+#### Purpose of this site
 
-Here are links to my blogs
+The purpose of this site is to document my work for POLI_SCI 390 Data Visualization class. I will share some examples of good and bad visualizations as well as my writings with data visualizations. In doing so, I hope to demonstrate the skills I have learned.
+
+#### A bit about me
+
+I am a senior at Northwestern University majoring in Computer Engineering and Computer Science. I am interested in developing high-performance hardware optimized for specific workloads. After graduation, I plan to attend grad school for a master's or Ph.D. degree. By taking this class, I hope to learn some tools for crafting effective messages with data and identifying misleading information.
+
+Outside of school, I enjoy running and playing badminton. You can sometimes find me running along the lake shore.
+
+Here is a link to [my LinkedIn](https://www.linkedin.com/in/jerry-xu-ruiqi/) if you want to connect.
+
+#### Here are links to my blogs
+
 [Blog 1](Blog1.md)
+
 [Blog 2](Blog2.md)
+
 [Blog 3](Blog3.md)
