@@ -14,3 +14,4 @@ data %>%
        title="Europe COVID Cases by Month",
        subtitle ="Plot of recorded COVID cases in the Dataset from European Centre for Disease Prevention and Control")+
   geom_point()
+
