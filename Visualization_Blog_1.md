@@ -16,6 +16,18 @@ The writer used this plot to support his claim that COVID-19 is more dangerous t
 
 This plot from McKinsey is a good example. First, to show the widespread growth of e-commerce, it uses a range of developed and developing countries. It also directly presents how the previous growth rate compares to the 2020 value, which is helpful because it highlights the main point and avoids bar charts' weakness in illustrating relative size. Additionally, the writers anticipated that the readers might doubt the significance of the change in growth rate. Therefore, they included the percentage of e-commerce in total retail sales. Because those values are high in the countries selected, we know that the trend is valid.
 
+### Replication Code
+
+`{
+rate <- c(rep("China" , 2) , rep("France" , 2) , rep("Japan" , 2) , rep("India" , 2) )
+condition <- rep(c("previous" , "current") , 4)
+value <- abs(rnorm(8,0))
+mock <- data.frame(rate,condition,value)
+
+mock %>% ggplot(aes(fill=condition, y=value, x=specie)) + 
+  geom_bar(position="dodge", stat="identity")
+  }`
+
 ## My Visualization
 
 <p align="center">
