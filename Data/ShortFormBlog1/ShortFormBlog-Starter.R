@@ -44,3 +44,20 @@ country_data_melt %>%
        color="Region",
        title="Annual CO2 Emissions per Capita from 1990 to 2018, by World Region")+
   geom_line(size=1)
+
+oil_data <- read.csv("world-crude-oil-price-vs-oil-consumption.csv")
+world_oil <- subset(oil_data,oil_data$Entity=='World')
+coeff <- 2*10^4
+world_oil %>%
+  drop_na()%>%
+  ggplot(aes(x=Year))+
+  geom_line(aes(y=Oil.Consumption...Barrels,color='Oil Consumption'))+
+  geom_line(aes(y=Oil...Crude.prices.since.1861..2021...*coeff,color='Crude Oil Prices'))+
+  scale_y_continuous(
+    name = "Oil Consumption (Barrels)",
+    sec.axis = sec_axis(~ . / coeff,name="Oil Price ($)")
+  ) + 
+  labs(x="Year", y = "Annual CO2 Emissions per Capita (Metric Tonnes)", 
+       color="Region",
+       title="Annual CO2 Emissions per Capita from 1990 to 2018, by World Region")
+
