@@ -104,3 +104,12 @@ world_oil %>%
        color="Value Type",
        title="World Crude Price and Consumption")
 
+#Electricity generation
+electricity_data <- read.csv("power_generation.csv")
+ele_data_melt <- melt(electricity_data, id='Period')
+ele_data_melt %>%
+  group_by(Period)%>%
+  drop_na()%>%
+  ggplot(aes(fill=variable, y=value, x=Period)) + 
+  geom_bar(position="stack", stat="identity")
+  
