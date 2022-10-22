@@ -10,7 +10,7 @@ The first plot above was made with data from the Global Carbon Project. It shows
 
 
 <p align="center">
-<img src="Figures/ShortFormBlog-1/Plot4.png" width="500" />
+<img src="Figures/ShortFormBlog-1/Plot4.png" width="800" />
 </p>
 
 <p align="center">
@@ -24,7 +24,7 @@ In response, developing countries claim that this is not fair for them. In order
 </p>
 
 <p align="center">
-<img src="Figures/ShortFormBlog-1/Plot5.png" width="500" />
+<img src="Figures/ShortFormBlog-1/Plot5.png" width="800" />
 </p>
 
 A good policy should be guided by pollution per capita while keeping inequalities in mind. From the plot above, we can see that while China's emission per capita is increasing, it is still comparable to the EU countries and significantly lower than that of the United States. Similarly, while its GDP per capita has grown a lot, there is still a considerable gap between China and the US. The gap for India is even greater in both respects. Therefore, a more advisable strategy is to encourage the developing world to adopt more green technologies during its growth to curb the increasing greenhouse gas emission.
