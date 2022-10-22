@@ -61,6 +61,7 @@ per_capita_all %>%
        color="Region",
        title="Annual CO2 Emissions per Capita from 1990 to 2018, by World Region")
 
+#GDP per capita
 per_capita_all %>% 
   group_by(Country.Name,Year)%>%
   filter(all(Country.Name %in% per_capita_target))%>%
@@ -71,30 +72,35 @@ per_capita_all %>%
        color="Region",
        title="Annual GDP per Capita from 1990 to 2018, by World Region")
 
+#Relationship between GDP and CO2 Emission
 per_capita_all %>% 
   group_by(Country.Name,Year)%>%
   filter(all(Country.Name=="China"))%>%
   drop_na()%>%
   ggplot(aes(x=Year))+
   geom_line(aes(y=GDP_per_Capita,color="GDP per capita"),size=1)+
-  geom_line(aes(y=Emission_per_Capita/50,color="Emission per capita"),size=1)+
+  geom_line(aes(y=Emission_per_Capita*1000,color="Emission per capita"),size=1)+scale_y_continuous(
+    name = "Emission per capita (Metric Tonnes)",
+    sec.axis = sec_axis(~ . / 1000,name="Emission per capita (Metric Tonnes)")
+  ) + 
   labs(x="Year", y = "Annual GDP per Capita (Dollars)", 
-       color="Region",
-       title="Annual GDP per Capita from 1990 to 2018, by World Region")
+       color="Value Type",
+       title="GDP and CO2 Emission per capita of China")
 
+#Oil Price and Consumption
 oil_data <- read.csv("world-crude-oil-price-vs-oil-consumption.csv")
 world_oil <- subset(oil_data,oil_data$Entity=='World')
-coeff <- 2*10^4
+coeff <- 2*10^-2
 world_oil %>%
   drop_na()%>%
   ggplot(aes(x=Year))+
-  geom_line(aes(y=Oil.Consumption...Barrels,color='Oil Consumption'))+
+  geom_line(aes(y=Oil.Consumption...Barrels/10^6,color='Oil Consumption'))+
   geom_line(aes(y=Oil...Crude.prices.since.1861..2021...*coeff,color='Crude Oil Prices'))+
   scale_y_continuous(
-    name = "Oil Consumption (Barrels)",
+    name = "Oil Consumption (Million Cubic Meter)",
     sec.axis = sec_axis(~ . / coeff,name="Oil Price ($)")
   ) + 
-  labs(x="Year", y = "Annual CO2 Emissions per Capita (Metric Tonnes)", 
-       color="Region",
-       title="Annual CO2 Emissions per Capita from 1990 to 2018, by World Region")
+  labs(x="Year", 
+       color="Value Type",
+       title="World Crude Price and Consumption")
 

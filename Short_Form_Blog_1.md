@@ -29,4 +29,10 @@ In response, developing countries claim that this is not fair for them. In order
 
 A good policy should be guided by pollution per capita while keeping inequalities in mind. From the plot above, we can see that while China's emission per capita is increasing, it is still comparable to the EU countries and significantly lower than that of the United States. Similarly, while its GDP per capita has grown a lot, there is still a considerable gap between China and the US. The gap for India is even greater in both respects. Therefore, a more advisable strategy is to encourage the developing world to adopt more green technologies during its growth to curb the increasing greenhouse gas emission.
 
+<p align="center">
+<img src="Figures/ShortFormBlog-1/Plot6.png" width="800" />
+</p>
+
+Next, I will discuss some factors that might affect our greenhouse gas emissions. One of the key factors is our use of oil. I created a plot of crude oil prices and oil consumption. As shown in the plot, the long-term impact of oil prices on oil demand is relatively small. Despite the fluctuations, the overall upward trend of oil demand remained unchanged. However, it is noticeable that around 1980, 2008, and 2019, oil consumption took a hit. These events relate to economic recessions rather than oil price changes. Therefore, I predict that while the price hike caused by the war in Ukraine is unlikely to alter global demand, a recession caused by soaring inflation might do the job. We should expect to see the post-pandemic surge in oil usage ease in the coming months, and this could be a positive sign for the effort to curb global warming. 
+
 [Click Here to Return to Homepage](README.md)
