@@ -129,3 +129,46 @@ ele_data_melt %>%
        y="Billion Megawatthours",
        title="US Electricty Generation from 2010 to 2020 by Sources")
 
+#Global Electricity generation
+global_ele_data <- read.csv("electricity-prod-source.csv")
+filter(global_ele_data,Entity == "World")->world_ele
+world_ele<- select(world_ele,-c('Entity','Code'))
+world_ele_melt <- melt(world_ele, id='Year')
+names(world_ele_melt)[names(world_ele_melt) == "variable"] <- "Energy Source"
+names(world_ele_melt)[names(world_ele_melt) == "value"] <- "Quantity"
+
+global_ele_share_data <- read.csv("share-elec-by-source.csv")
+filter(global_ele_share_data,Entity == "World")->world_ele_share
+world_ele_share<- select(world_ele_share,-c('Entity','Code'))
+world_ele_share_melt <- melt(world_ele_share, id='Year')
+names(world_ele_share_melt)[names(world_ele_share_melt) == "variable"] <- "Energy Source"
+names(world_ele_share_melt)[names(world_ele_share_melt) == "value"] <- "Percentage"
+
+world_ele_melt %>%
+  filter(Year>=1990)%>%
+  group_by(Year)%>%
+  drop_na()%>%
+  ggplot(aes(fill=`Energy Source`, y=Quantity, x=Year)) + 
+  geom_area(position="stack", stat="identity")+
+  labs(x="Year", 
+       y="Amount of Electrity (TWh)",
+       title="World Electricty Generation from 1990 to 2021 by Sources")->ele_amount_plot
+
+world_ele_share_melt %>%
+  filter(Year>=1990)%>%
+  group_by(Year)%>%
+  drop_na()%>%
+  ggplot(aes(color=`Energy Source`, y=Percentage, x=Year)) + 
+  geom_line(stat="identity")+
+  labs(x="Year", 
+       y="Percentage of Electricity")->ele_share_plot
+
+grid.arrange(ele_amount_plot, ele_share_plot, ncol=1)->res
+ggsave("electricity.jpg",res, width = 20, height = 20,dpi=500, units = "cm")
+
+pop_data <- read.csv("world-population-by-region-with-projections.csv")
+filter(global_ele_share_data,Entity == "World")->world_ele_share
+world_ele_share<- select(world_ele_share,-c('Entity','Code'))
+world_ele_share_melt <- melt(world_ele_share, id='Year')
+names(world_ele_share_melt)[names(world_ele_share_melt) == "variable"] <- "Energy Source"
+names(world_ele_share_melt)[names(world_ele_share_melt) == "value"] <- "Percentage"
