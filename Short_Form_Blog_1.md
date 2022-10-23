@@ -47,15 +47,23 @@ Next, I will discuss some factors that might affect our greenhouse gas emissions
 
 Another important source of greenhouse gas emission is electricity generation, which, according to the EPA, accounts for 25% of the greenhouse produced by the world. Recently, there are some promising developments. According to the first plot above, a significant portion of electricity comes from zero-emission sources like nuclear, hydro, and wind. The second plot also shows that renewable energy including wind and solar is trending up, whereas the use of coal is decreasing. Furthermore, if the rapid developments of EV technologies allow us to rely less on fossil fuels and replace them with renewable energy, this could lead to significant emission reduction. Despite that, we should pay attention to the fact that our electricity usage is still increasing and ensure that we are not wasting energy and use cleaner sources when building power plants. It is also important to note that if Republicans take back the Senate and House in the midterm or the White House in 2024, they might slow down the transition to green energy due to their conservative views on this issue. If the US shifts its policy, its prominent role on the world stage might affect other countries' decisions as well.
 
-### World Population
+### Agriculture and Industry
 
 <p align="center">
 <img src="Figures/ShortFormBlog-1/Plot8.jpg" width="800" />
 </p>
 
-A final key predictor of greenhouse gas emissions is the global population. It directly determines the goods we produce and the energy we need. By predicting the trend and distribution of population, we can gain insights into how our greenhouse gas emissions will change. From the plot above, we see that the global population has been steadily increasing during the past century, matching the growth in energy demand we saw before. Since the population is not expected to level off until 2100, we will continue to face challenges in controlling the increase in greenhouse gas emissions. However, after 2025, the growth will start to slow down. Another important pattern is that Asia and Africa accounts for most of the change, which means the developing countries are driving the increase. It is a relief since those countries typically have less CO2 emission per capita. Overall, the trend in population means we need to put more effort into fighting climate change.
+A final key predictor of greenhouse gas emissions are agriculture and industry, which takes up 24% and 21% of global emissions. Since we do not have enough space to explore those two areas in detail, I will use population to guide the analysis. By predicting the trend and distribution of population, we can gain insights into how our greenhouse gas emissions will change. From the plot above, we see that the global population has been steadily increasing during the past century, matching the growth in energy demand we saw before. Since the population is not expected to level off until 2100, we will continue to face challenges in controlling the increase in greenhouse gas emissions. However, after 2025, the growth will start to slow down. Another important pattern is that Asia and Africa accounts for most of the change, which means the developing countries are driving the increase. It is a relief since those countries typically have less CO2 emission per capita. Overall, the trend in population means we need to put more effort into fighting climate change.
 
+### Summary
 
+In summary, this blog explores some important questions regarding climate change. First, I believe while developing countries' emissions are increasing, it does not mean they should bear the burden alone. To reduce the gap between developing and developed countries, we should use emissions per capita to guide us. Furthermore, I also talk about how transportation, electricity generation, and agriculture and industry affect the global emissions level. Overall, we still face some challenges from population growth. However, the possibility of a recession and transition to green energy should alleviate the pressure in the short term. In the long term, we should continue to invest in renewable energy to combat climate change.
+
+There are two main sources of data used in this blog. The World Bank is a well-known and authoritative source of data. Our world in data is supported by Global Changes Data Lab, a non-profit based in the UK. It works with Oxford University to gather and share data. Therefore, it should also be considered reliable. Additionally, I also cited some data from the EPA, which is a good source for energy-related issues.
+
+There are some limitations in the data I use. For example, it is unclear how they arrived at CO2 emissions numbers given that it is not feasible to measure emissions at every possible source. Furthermore, the population dataset contains projections up to 2100. It would be nice to see the models used there. Additionally, there are some problems data does not show. I cannot show how the lower GDP per capita of China and India relate to the living standards of their people. There could be better sources for making that point.
+
+Similarly, the visualizations have some room for improvement. For the GDP and CO2 emissions per capita plot, it might help to show the trend for multiple countries. However, since I want to demonstrate that the trend holds true across the recorded period and there are two axes, I had to limit the plot to data for China. For the total emission from the 1750 to 2020 plot, I think it has room for more information, but I could not come up with something concrete to add. In the percentage of energy consumption plot, the lower part of the plot gets too crowded due to a large number of energy sources in that range. It would be nice to spread them out. Lastly, if the population plot gets separated into specific countries, it might help to make my point that developing countries are the main contributor clearer. However, there is also the risk of making too many layers and hurting the overall delivery. After weighing the cost and benefits, I decided to use the current version.
 
 ## Data sources
 
@@ -74,6 +82,10 @@ https://ourworldindata.org/grapher/world-crude-oil-price-vs-oil-consumption
 Electricity by Sources Data:
 https://ourworldindata.org/electricity-mix
 
+Population Data:
+https://ourworldindata.org/world-population-growth
 
+Global Greenhouse Gas Emissions Data:
+https://www.epa.gov/ghgemissions/global-greenhouse-gas-emissions-data
 
 [Click Here to Return to Homepage](README.md)
