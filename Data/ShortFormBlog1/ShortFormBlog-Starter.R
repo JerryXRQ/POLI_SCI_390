@@ -94,6 +94,12 @@ coeff <- 2*10^-2
 world_oil %>%
   drop_na()%>%
   ggplot(aes(x=Year))+
+  geom_vline(xintercept=1979, linetype = "longdash",)+
+  annotate(geom="text", x=1983, y=0.5, label="Energy Crisis", size=3) +
+  geom_vline(xintercept=2008, linetype = "longdash",)+
+  annotate(geom="text", x=2003, y=0.5, label="Great Depression", size=3) +
+  geom_vline(xintercept=2019, linetype = "longdash",)+
+  annotate(geom="text", x=2014, y=0.5, label="COVID Pandemic", size=3) +
   geom_line(aes(y=Oil.Consumption...Barrels/10^6,color='Oil Consumption'))+
   geom_line(aes(y=Oil...Crude.prices.since.1861..2021...*coeff,color='Crude Oil Prices'))+
   scale_y_continuous(
@@ -107,9 +113,19 @@ world_oil %>%
 #Electricity generation
 electricity_data <- read.csv("power_generation.csv")
 ele_data_melt <- melt(electricity_data, id='Period')
+names(ele_data_melt)[names(ele_data_melt) == "variable"] <- "Energy Source"
+names(ele_data_melt)[names(ele_data_melt) == "value"] <- "Quantity"
+ele_data_melt$Quantity <- as.integer(gsub(",", "", ele_data_melt$Quantity))
+
 ele_data_melt %>%
   group_by(Period)%>%
   drop_na()%>%
-  ggplot(aes(fill=variable, y=value, x=Period)) + 
-  geom_bar(position="stack", stat="identity")
-  
+  ggplot(aes(fill=`Energy Source`, y=Quantity/1000000.0, x=Period)) + 
+  geom_bar(position="stack", stat="identity")+
+  scale_x_continuous(
+    breaks=c(2010,2012,2014,2016,2018,2020)
+  ) + 
+  labs(x="Year", 
+       y="Billion Megawatthours",
+       title="US Electricty Generation from 2010 to 2020 by Sources")
+
