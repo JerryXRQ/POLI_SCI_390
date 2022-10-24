@@ -80,14 +80,33 @@ per_capita_all %>%
   ggplot(aes(x=Year))+
   geom_line(aes(y=GDP_per_Capita,color="GDP per capita"),size=1)+
   geom_line(aes(y=Emission_per_Capita*1000,color="Emission per capita"),size=1)+scale_y_continuous(
-    name = "Emission per capita (Metric Tonnes)",
+    name = "GDP per capita (Dollars)",
     sec.axis = sec_axis(~ . / 1000,name="Emission per capita (Metric Tonnes)")
   ) + 
   labs(x="Year", y = "Annual GDP per Capita (Dollars)", 
        color="Value Type",
        title="GDP and CO2 Emission per capita of China")
 
-#Oil Price and Consumption
+
+#Relationship between GDP and CO2 Emission
+sel_country<-c('China','Brazil','Iran','Vietnam',
+               'Indonesia','Philippines','India','South Africa',
+               'United States','United Kingdom','European Union',
+               'Germany','France','Canada','Finland','Japan','Argentina')
+per_capita_all %>%
+  group_by(Country.Name,Year)%>%
+  filter(all(Country.Name %in% sel_country))%>%
+  drop_na()%>%
+  ggplot(aes(y = GDP_per_Capita, x = Emission_per_Capita)) +
+  labs(x="Emissions per capita", y = "Annual GDP per capita (Dollars)") +
+  geom_point(size=2,color='red',alpha=0.5)-> p
+
+p + transition_time(Year) +
+  geom_text(aes(label = Country.Name),check_overlap = T, nudge_y = -1200)+
+  labs(title = "Emissions and Annual GDP per capita of {frame_time}") +
+  anim_save("Emissions-GDP.gif", dpi=1200)
+
+ #Oil Price and Consumption
 oil_data <- read.csv("world-crude-oil-price-vs-oil-consumption.csv")
 world_oil <- subset(oil_data,oil_data$Entity=='World')
 coeff <- 2*10^-2
@@ -166,9 +185,18 @@ world_ele_share_melt %>%
 grid.arrange(ele_amount_plot, ele_share_plot, ncol=1)->res
 ggsave("electricity.jpg",res, width = 20, height = 20,dpi=500, units = "cm")
 
+regions<-c('Oceania','Africa', 'Asia', 'South America', 'North America','Europe')
 pop_data <- read.csv("world-population-by-region-with-projections.csv")
-filter(global_ele_share_data,Entity == "World")->world_ele_share
-world_ele_share<- select(world_ele_share,-c('Entity','Code'))
-world_ele_share_melt <- melt(world_ele_share, id='Year')
-names(world_ele_share_melt)[names(world_ele_share_melt) == "variable"] <- "Energy Source"
-names(world_ele_share_melt)[names(world_ele_share_melt) == "value"] <- "Percentage"
+filter(pop_data,Entity %in% regions)->pop_sel
+pop_sel <- select(pop_sel,-c('Code'))
+names(world_ele_share_melt)[names(world_ele_share_melt) == "Entity"] <- "Region"
+
+pop_sel %>%
+  filter(Year>=1900)%>%
+  group_by(Year)%>%
+  drop_na()%>%
+  ggplot(aes(fill=Entity, y=Population/10^9, x=Year)) + 
+  geom_area(position="stack", stat="identity")+
+  labs(x="Year", 
+       y="Population (Billion)",
+       title="World Population Projection from 1900 to 2100 by United Nations")

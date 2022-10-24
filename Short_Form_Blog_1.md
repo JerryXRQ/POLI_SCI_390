@@ -12,14 +12,14 @@ The first plot above was made with data from the Global Carbon Project. It shows
 
 
 <p align="center">
-<img src="Figures/ShortFormBlog-1/Plot4.png" width="800" />
+<img src="Figures/ShortFormBlog-1/Anim1.gif" width="800" />
 </p>
 
 <p align="center">
 <img src="Figures/ShortFormBlog-1/Plot2.png" width="800" />
 </p>
 
-In response, developing countries claim that this is not fair for them. In order to provide better living standards for their people, they need to industrialize, which requires more fossil fuel than agriculture. Additionally, a more comfortable lifestyle will require more energy consumption. This trend is especially prominent in China. As shown by the plot above, the carbon dioxide emission per capita growth kept pace with that of the GDP per capita. They argue that the developed countries have already created greenhouse gas in their industrialization process and have no right to judge them. Indeed, if we change how we view the data and sum up the emission from 1750 to 2020, we can see that the developed regions have released much more CO2. As someone coming from the developing world, I believe it would be unfair if the burden to combat climate change falls more on countries like China given many of their citizens still live in poverty.
+In response, developing countries claim that this is not fair for them. In order to provide better living standards for their people, they need to industrialize, which requires more fossil fuel than agriculture. Additionally, a more comfortable lifestyle will require more energy consumption. This trend is especially in the first plot above. We can see that higher GDP per capita usually means higher emissions per capita. As developing nations grow economically, their emissions per capita also increases. They argue that the developed countries have already created greenhouse gas in their industrialization process and have no right to judge them. Indeed, if we change how we view the data and sum up the emission from 1750 to 2020, we can see that the developed regions have released much more CO2. As someone coming from the developing world, I believe it would be unfair if the burden to combat climate change falls more on countries like China given many of their citizens still live in poverty.
 
 <p align="center">
 <img src="Figures/ShortFormBlog-1/Plot3.png" width="800" />
