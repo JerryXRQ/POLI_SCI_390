@@ -12,7 +12,7 @@ The first plot above was made with data from the Global Carbon Project. It shows
 
 
 <p align="center">
-<img src="Figures/ShortFormBlog-1/Anim1.gif" width="8600" />
+<img src="Figures/ShortFormBlog-1/Anim1.gif" width="600" />
 </p>
 
 <p align="center">
