@@ -3,7 +3,7 @@ packages <- c("tidyverse", "reshape2", "fauxnaif", "gganimate", "ggthemes",
 lapply(packages, require, character.only = TRUE)
 
 emission <- read.csv("annual-co-emissions-by-region.csv")
-target <- c('China','Europe (excl. EU-28)','European Union (28)','India','United States' )
+target <- c('Indonesia','India','China','European Union (28)','United States' )
 emission %>% 
   group_by(Entity,Year)%>%
   filter(all(Entity %in% target))%>%
