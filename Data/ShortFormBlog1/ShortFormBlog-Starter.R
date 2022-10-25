@@ -9,21 +9,23 @@ emission %>%
   filter(all(Entity %in% target))%>%
   ggplot(aes(y=Annual.CO2.emissions..zero.filled./10^9,x=Year, color=Entity))+
   labs(x="Year", y = "Annual of CO2 Emissions (Billion Tonnes)", 
-       color="Year",
+       color="Region",
        title="Annual CO2 Emissions from Fossil Fuels from 1750 to 2020, by World Region")+
   geom_line(size=1)
 
 emission %>% 
   group_by(Entity)%>%
   filter(all(Entity %in% target))%>%
-  summarize(sum_ems=sum(Annual.CO2.emissions..zero.filled.),na.rm=T)%>%
-  ggplot(aes(y=sum_ems/10^9,x=Entity,fill=Entity))+
+  summarize(sum_ems=sum(Annual.CO2.emissions..zero.filled.),na.rm=T)->sum_ems_res
+
+sum_ems_res%>%
+  ggplot(aes(y=sum_ems/10^9,x=reorder(Entity,sum_ems),fill=Entity))+
+  guides(fill=guide_legend(title="Region"))+
   labs(x="Region", y = "Sum of CO2 Emissions (Billion Tonnes)", 
-       color="Year",
        title="Sum of CO2 Emissions from Fossil Fuels from 1750 to 2020, by World Region")+
   geom_bar(stat='identity')
 
-per_capita_target <- c('China','European Union','India','United States' )
+per_capita_target <- c('China','European Union','India','Indonesia','United States' )
 
 per_capita_emission <- read.csv("emission_per_capita.csv")
 per_capita_GDP <- read.csv("GDP_per_capita.csv")
@@ -59,7 +61,7 @@ per_capita_all %>%
   geom_line(aes(y=Emission_per_Capita,color=Country.Name),size=1)+
   labs(x="Year", y = "Annual CO2 Emissions per Capita (Metric Tonnes)", 
        color="Region",
-       title="Annual CO2 Emissions per Capita from 1990 to 2018, by World Region")
+       title="Annual CO2 Emissions per capita from 1990 to 2018, by World Region")
 
 #GDP per capita
 per_capita_all %>% 
@@ -197,6 +199,7 @@ pop_sel %>%
   drop_na()%>%
   ggplot(aes(fill=Entity, y=Population/10^9, x=Year)) + 
   geom_area(position="stack", stat="identity")+
+  guides(fill=guide_legend(title="Region"))+
   labs(x="Year", 
        y="Population (Billion)",
        title="World Population Projection from 1900 to 2100 by United Nations")
