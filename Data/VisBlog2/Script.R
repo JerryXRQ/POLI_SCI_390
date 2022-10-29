@@ -24,6 +24,9 @@ sum_ems_res %>%
         upper_bound = mean_ems + (se_ems*1.96))-> sum_ems_res
   #Assume a 95% confidence, we can use the equation above to find confidence interval
 
+# Since the yearly changes for emission should be relatively small in a ten-year interval, we can treat each yearly 
+# emission value as separate measurements and use the standard deviation and sample size to derive standard error.
+# We can visualize the confidence interval this way as the interval is a region around the average we found.
 
 sum_ems_res %>%
   ggplot(aes(Entity, mean_ems, fill = Entity)) +
@@ -62,4 +65,6 @@ cases_data %>%
   geom_errorbar(aes(ymin = lower_bound, ymax = upper_bound), width = 0.1,size=0.8)+
   geom_point(color="red")
   
-
+# Since the daily cases should be relatively uniform in a month and surges usually take place in a period of 2 or more months,
+# we can treat each daily case total as separate measurements and use the standard deviation and sample size to derive standard error.
+# We can visualize the confidence interval this way as the interval is a region around the average we found.
