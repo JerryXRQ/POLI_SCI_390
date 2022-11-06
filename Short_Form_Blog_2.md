@@ -6,14 +6,18 @@ In this blog, I want to investigate the relationship between government censorsh
 <img src="Figures/ShortFormBlog-2/Plot1.png" width="800" />
 </p>
 
-This plot provides a snapshot of the level of media censorship and corruption of countries grouped by their geographic regions. We can see that in most cases, having lower level of media censorship leads to lower corruption. 
+This plot provides a snapshot of the level of media censorship and corruption in countries grouped by their geographic regions. We can see that in most cases, having a lower level of media censorship leads to less corruption. This trend is especially prominent for countries in Europe and North America. However, there are a few special cases like Singapore and China, where the level of corruption is relatively low despite government censorship.
 
 <p align="center">
 <img src="Figures/ShortFormBlog-2/Plot2.png" width="800" />
 </p>
 
+We can also group the countries based on their government censorship levels. In this plot, we can see an even clearer trend that countries with fewer media censorship also have less corruption. However, the significantly lower corruption index for the countries with media censorship indices above 2 also suggests an alternative explanation. Since that category contains mainly wealthy European countries, the higher living standard could discourage corruption.
+
 <p align="center">
 <img src="Figures/ShortFormBlog-2/Plot3.png" width="800" />
 </p>
+
+This plot reveals some interesting trends. Contrary to the previous plots, the trend seems to be reversed across the time period, with the average level of censorship increasing and corruption decreasing. However, I believe the overall conclusion remains valid. Given the increasing amount of misinformation faced by all governments, we should expect more censorship. It is encouraging to see the increase in censorship did not prevent the decline in corruption across this period worldwide.
 
 [Click Here to Return to Homepage](README.md)
