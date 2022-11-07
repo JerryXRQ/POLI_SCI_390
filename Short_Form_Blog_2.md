@@ -20,4 +20,8 @@ We can also group the countries based on their government censorship levels. In 
 
 This plot reveals some interesting trends. Contrary to the previous plots, the trend seems to be reversed across the time period, with the average level of censorship increasing and corruption decreasing. However, I believe the overall conclusion remains valid. Given the increasing amount of misinformation faced by all governments, we should expect more censorship. It is encouraging to see the increase in censorship did not prevent the decline in corruption across this period worldwide.
 
+<p align="center">
+<img src="Figures/ShortFormBlog-2/Plot4.jpg" width="800" />
+</p>
+
 [Click Here to Return to Homepage](README.md)
