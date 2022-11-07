@@ -24,4 +24,8 @@ This plot reveals some interesting trends. Contrary to the previous plots, the t
 <img src="Figures/ShortFormBlog-2/Plot4.jpg" width="800" />
 </p>
 
+While the second plot gives us an idea about the average corruption index in each bin, it does not show the distribution of indices. The density plot above shows how closely the corruption indices cluster around the mean, which allows us to evaluate if we can use media censorship as a predictor of corruption. In this case, we can say that when the level of censorship is relatively high, we can reliably predict a low level of corruption. Furthermore, the blue dotted line showing the average corruption level still presents an overall negative correlation between those two indices.
+
+
+
 [Click Here to Return to Homepage](README.md)
