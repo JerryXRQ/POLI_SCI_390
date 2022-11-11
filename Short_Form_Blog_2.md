@@ -28,11 +28,6 @@ While the second plot gives us an idea about the average corruption index in eac
 
 ## References
 
-<p align="center">
-<img src="Figures/ShortFormBlog-2/ref1.JPG" width="800" />
-</p>
-<p align="center">
-<img src="Figures/ShortFormBlog-2/ref2.JPG" width="800" />
-</p>
+[Click Here to View Package References](References.pdf)
 
 [Click Here to Return to Homepage](README.md)
