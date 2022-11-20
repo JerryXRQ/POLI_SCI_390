@@ -1,20 +1,73 @@
 packages <- c("tidyverse", "reshape2", "fauxnaif", "gganimate", "ggthemes",
-              "stringr", "gridExtra", "gifski", "png", "ggrepel", "scales", "ggdist",
-              "lubridate", "paletteer", "GGally", "systemfonts", "extrafont", "colorspace")
+              "stringr", "gridExtra", "gifski", "png", "ggrepel", "scales",
+              "lubridate", "paletteer", "GGally", "systemfonts", "extrafont",
+              "colorspace", "sf", "rnaturalearth", "ggmap",
+              "rnaturalearthdata", "paletteer", "stringr", "haven", "sp")
 lapply(packages, require, character.only = TRUE)
 
+################### Plot 1 ###################
 export <- read.csv("world-trade-exports-constant-prices.csv")
+cost <- read.csv("real-transport-and-communication-costs.csv")
+
 
 export %>% 
-  group_by(Entity,Year)%>%
-  ggplot(aes(y=World.Trade..relative.to.1913...Federico.and.Tena.Junguito..2016..,x=Year))+
+  group_by(Year)%>%
+  ggplot()+
   labs(x="Year", y = "World Trade Relative to 1913 (With 1913 as 100%)",
        title="Global Export Adjusted to Inflation Relative to 1913 Level")+
   theme_stata()+scale_y_continuous(labels = function(x) paste0(x, "%"))+ 
   theme(axis.title.x = element_text(size = 14, margin = margin(t = 8)),
-        plot.title = element_text(size = 18), axis.text.y = element_text(size = 10, angle=0),
+        plot.title = element_text(size = 16), axis.text.y = element_text(size = 10, angle=0),
         axis.text.x = element_text(size = 12),
         axis.title.y = element_text(margin = margin(r = 8),size = 12))+
-  geom_line(size=1)+
+  geom_line(size=1,aes(y=World.Trade..relative.to.1913...Federico.and.Tena.Junguito..2016..,x=Year))+
   annotate(geom="text", x=1928, y=500, label="End of World War II", size=3) +
-  geom_vline(xintercept=1945, linetype = "longdash")
+  geom_vline(xintercept=1945, linetype = "longdash")->Export_Plot
+
+colors <- c("International Calling Cost" = "blue", "Passenger Air Transport Cost" = "red", "Sea Freight Cost" = "orange")
+
+cost %>%
+  group_by(Year)%>%
+  ggplot(aes(x=Year))+
+  scale_color_manual(values = colors) +
+  geom_line(size=0.8,aes(y=International.calling.costs..relative.to.1930...OECD.Economic.Outlook..2007..,color="International Calling Cost"))+
+  geom_line(size=0.8,aes(y=Passenger.air.transport.cost..relative.to.1930...OECD.Economic.Outlook..2007..,color="Passenger Air Transport Cost"))+
+  geom_line(size=0.8,aes(y=Sea.freight.cost..relative.to.1930...OECD.Economic.Outlook..2007..,color="Sea Freight Cost"))+
+  labs(x = "Year", y= "Cost to 1930", color = "Type of Costs",
+       title="Costs Related to Globalization Relative to 1930 Level") + 
+  theme_stata()+
+  theme(axis.title.x = element_text(size = 14,),
+        plot.title = element_text(size = 16), axis.text.y = element_text(size = 10, angle=0),
+        axis.text.x = element_text(size = 12),
+        axis.title.y = element_text(margin = margin(r = 8),size = 12))->Cost_Plot
+grid.arrange(Export_Plot, Cost_Plot, nrow=2)
+
+################### Plot 2 ###################
+export_as_gdp <- read.csv("merchandise-exports-gdp-cepii.csv")
+countries_export <- unique(export_as_gdp$Entity)
+
+# specify the map that we want to call
+selected_countries <- ne_countries(returnclass = "sf")
+
+inner_join(selected_countries, export_as_gdp, 
+           by = c("adm0_a3" = "Code")) -> export_mapping
+
+map_colors <- c("0-20%" = "dodgerblue3", "20-40%" = "chartreuse2", "40-60%" = "darkorange1","60-80%"="firebrick2","80-100%"="darkorchid1")
+
+export_mapping %>% 
+  filter(Year==2014)%>%
+  group_by(geounit) %>%
+  mutate(ranges=cut(Value.of.global.merchandise.exports.as.a.share.of.GDP..Fouquin.and.Hugot..CEPII.2016..National.data.,seq(0, 100, 20),
+                    labels=c("0-20%","20-40%","40-60%","60-80%","80-100%"))) %>%
+  ggplot(aes(fill = ranges)) + 
+  scale_fill_manual(values = map_colors) +
+  labs(fill = "Percentage of Export in GDP",title="Value of Exported Goods as Share of GDP in 2014") +
+  geom_sf(lwd = 0) + theme_stata()+
+  theme(axis.title.x = element_text(size = 14,),
+        plot.title = element_text(size = 18), axis.text.y = element_text(size = 10, angle=0),
+        axis.text.x = element_text(size = 12),
+        axis.title.y = element_text(margin = margin(r = 8),size = 12))
+
+################### Plot 3 ###################
+
+
