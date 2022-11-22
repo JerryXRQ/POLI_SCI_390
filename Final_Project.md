@@ -18,4 +18,10 @@ To understand the impact of trade on economics, we can look at the map displayin
 
 The plot above presents this relationship more clearly. As the countries' merchandise export start to take up greater portions of their GDP, their GDP per capita is also increasing. It is interesting to see that around the Great Recession in 2008, both GDP per capita and export percentage decreased. Therefore, we can see that by allowing the developed countries to invest in the developing world and all the countries to specialize, globalization has directly contributed to economic growth in the past half-century.
 
+<p align="center">
+<img src="Figures/FinalProject/Plot4.png" width="900" />
+</p>
+
+Then we will try to answer the question of whether relying on cheap foreign labor led to a greater wealth gap in developed countries by eliminating jobs and forcing workers to take lower salaries. The measurement of inequality I have chosen here is the Gini index. The import as a percentage of GDP should be proportional to the impact of globalization on domestic manufacturing. As shown by the plot above, the Gini indices of the selected countries remain largely unchanged in the time period, despite countries like France and Germany having increasingly higher levels of import. A plausible explanation is that while globalization reduces the number of manufacturing jobs in those countries, it provides new opportunities in other industries. By encouraging workers to pursue jobs with higher skill requirements and wages, globalization can potentially have a positive impact on the distribution of income in a country.
+
 [Click Here to Return to Homepage](README.md)

@@ -44,9 +44,7 @@ grid.arrange(Export_Plot, Cost_Plot, nrow=2)
 
 ################### Plot 2 ###################
 export_as_gdp <- read.csv("merchandise-exports-gdp-cepii.csv")
-countries_export <- unique(export_as_gdp$Entity)
 
-# specify the map that we want to call
 selected_countries <- ne_countries(returnclass = "sf")
 
 inner_join(selected_countries, export_as_gdp, 
@@ -69,5 +67,46 @@ export_mapping %>%
         axis.title.y = element_text(margin = margin(r = 8),size = 12))
 
 ################### Plot 3 ###################
+income_trade <- read.csv("growth-of-income-and-trade.csv")
 
+income_trade %>% 
+  group_by(Entity) %>%
+  filter(Year>=2000)%>%
+  filter(Year<=2014)%>%
+  filter(Entity!="Liberia")%>%
+  filter(Entity!="Qatar")%>%
+  ggplot(aes(x=Value.of.global.merchandise.exports.as.a.share.of.GDP..Fouquin.and.Hugot..CEPII.2016..National.data.,y=GDP.per.capita))+
+  geom_point(size=2,color='red',alpha=0.5) + transition_time(Year) + theme_stata()+
+  geom_text(aes(label = Entity),check_overlap = T, nudge_y = -800)+
+  labs(x = "Value of Merchandise Export as Share of GDP", title="Percentage of Export in GDP versus GDP per capita of {frame_time}", 
+       y= "GDP per capita") +
+  theme(axis.title.x = element_text(size = 20,),
+        plot.title = element_text(size = 24), axis.text.y = element_text(size = 20, angle=0),
+        axis.text.x = element_text(size = 18),
+        axis.title.y = element_text(margin = margin(r = 8),size = 20))-> animation
+animate(animation, height = 800, width= 1000)
+anim_save("GDP-Export.gif")
+
+################### Plot 4 ###################
+
+gini_all <- read.csv("gini-world.csv")
+
+drop <- c('Indicator.Name','Country.Code','Indicator.Code')
+gini_all <- gini_all[,!(names(gini_us) %in% drop)]
+gini_melt <- melt(gini_all, id='Country.Name')
+gini_melt <- select(gini_melt, c("Country.Name","variable","value"))
+names(gini_melt)[names(gini_melt) == "variable"] <- "Year"
+names(gini_melt)[names(gini_melt) == "value"] <- "Gini Index"
+gini_melt$Year = substr(gini_melt$Year,2,5)
+gini_melt$Year = strtoi(gini_melt$Year)
+
+import_all <- read.csv("import-world.csv")
+
+import_all <- import_all[,!(names(import_all) %in% drop)]
+import_melt <- melt(import_all, id='Country.Name')
+import_melt <- select(import_melt, c("Country.Name","variable","value"))
+names(import_melt)[names(import_melt) == "variable"] <- "Year"
+names(import_melt)[names(import_melt) == "value"] <- "Import as Percentage of GDP"
+import_melt$Year = substr(import_melt$Year,2,5)
+import_melt$Year = strtoi(import_melt$Year)
 
