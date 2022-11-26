@@ -192,4 +192,41 @@ trade_data %>%
 grid.arrange(Export_Plot, Import_Plot, nrow=2)
 
 ################### Plot 7 ###################
+trade_partners<-read.csv("distribution-of-bilateral-and-unilateral-trade-partnerships.csv")
+trade_partners<-cbind(trade_partners[1:3],stack(trade_partners[4:6]))
+trade_partners%>%
+  group_by(Year)%>%
+  mutate(total=sum(values))->trade_partners
+
+partner_type <- c("Non.Trading" = "darkgolden1", "Bilateral.Trade.Partnerships" = "chartreuse", 
+               "Unilateral.Trade.Partnerships" = "deepskyblue")
+
+trade_partners %>%
+  group_by(Year)%>%
+  ggplot(aes(x=Year, y=values/total*100, fill=ind))+
+  scale_color_manual(values = partner_type) +
+  geom_area(position = "stack", size = 1)+
+  theme(axis.title.x = element_text(size = 14),
+        plot.title = element_text(size = 16), axis.text.y = element_text(size = 10, angle=0),
+        axis.text.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12))+
+  theme_stata()+
+  labs(x = "Year", title="Share of Bilateral and Unilateral Trade",y="Percentage",
+       fill="Trade Partnership Type")
+
+################### Plot 8 ###################
+trade_type <- read.csv("share-of-world-merchandise-trade-by-type-of-trade-percent.csv")
+
+trade_type_color <- c("Non.rich.to.Non.rich" = "chocolate1", "Non.rich.to.Rich" = "chartreuse", 
+                      "Rich.to.Rich" = "deepskyblue","Rich.to.Non.rich"="red")
+
+trade_type %>%
+  group_by(Year)%>%
+  ggplot(aes(x=Year))+
+  scale_color_manual(values=trade_type_color)+
+  geom_line(aes(y=Non.rich.to.Non.rich, color="Non.rich.to.Non.rich"), size=1)+
+  geom_line(aes(y=Non.rich.to.Rich, color="Non.rich.to.Rich"), size=1)+
+  geom_line(aes(y=Rich.to.Non.rich, color="Rich.to.Non.rich"), size=1)+
+  geom_line(aes(y=Rich.to.Rich, color="Rich.to.Rich"), size=1)
+
 

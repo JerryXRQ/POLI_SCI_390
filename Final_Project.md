@@ -38,6 +38,12 @@ Although the claims against globalization were poorly established, they did not 
 <img src="Figures/FinalProject/Plot7.png" width="900" />
 </p>
 
-However, there are some encouraging signs. Despite the higher tariff between US and China, their trade volume started to recover, showing their need for each other. Furthermore, as shown above, the number of bilateral trading partnerships is steadily increasing, and the number of non-trading countries is decreasing. While the voice is decoupling is loud, there is strong evidence supporting the strength of globalization. 
+However, there are some encouraging signs. Despite the higher tariff between US and China, their trade volume started to recover, showing their need for each other. Furthermore, as shown above, the number of bilateral trading partnerships is steadily increasing, and the number of non-trading countries is decreasing. While the voice is decoupling is loud, there is strong evidence supporting the strength of globalization.
+
+<p align="center">
+<img src="Figures/FinalProject/Plot8.png" width="900" />
+</p>
+
+Furthermore, trading between countries in the global south is gradually increasing. As those countries are less likely to engage in competitions like the current one between the US and China, we should expect fewer disturbances. Additionally, as countries like China lead the way in supplying developing countries with affordable clothing, electronics, and technologies, we should expect globalization to serve as a driving force for economic development and improvement of living standards.
 
 [Click Here to Return to Homepage](README.md)
