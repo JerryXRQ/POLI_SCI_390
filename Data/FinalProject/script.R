@@ -206,27 +206,34 @@ trade_partners %>%
   ggplot(aes(x=Year, y=values/total*100, fill=ind))+
   scale_color_manual(values = partner_type) +
   geom_area(position = "stack", size = 1)+
+  theme_stata()+
   theme(axis.title.x = element_text(size = 14),
         plot.title = element_text(size = 16), axis.text.y = element_text(size = 10, angle=0),
         axis.text.x = element_text(size = 12),
         axis.title.y = element_text(size = 12))+
-  theme_stata()+
   labs(x = "Year", title="Share of Bilateral and Unilateral Trade",y="Percentage",
        fill="Trade Partnership Type")
 
 ################### Plot 8 ###################
 trade_type <- read.csv("share-of-world-merchandise-trade-by-type-of-trade-percent.csv")
 
-trade_type_color <- c("Non.rich.to.Non.rich" = "chocolate1", "Non.rich.to.Rich" = "chartreuse", 
-                      "Rich.to.Rich" = "deepskyblue","Rich.to.Non.rich"="red")
+trade_type_color <- c("Non-rich to Non-rich" = "chocolate1", "Non-rich to Rich" = "chartreuse3", 
+                      "Rich to Rich" = "deepskyblue","Rich to Non-rich"="red")
 
 trade_type %>%
   group_by(Year)%>%
   ggplot(aes(x=Year))+
   scale_color_manual(values=trade_type_color)+
-  geom_line(aes(y=Non.rich.to.Non.rich, color="Non.rich.to.Non.rich"), size=1)+
-  geom_line(aes(y=Non.rich.to.Rich, color="Non.rich.to.Rich"), size=1)+
-  geom_line(aes(y=Rich.to.Non.rich, color="Rich.to.Non.rich"), size=1)+
-  geom_line(aes(y=Rich.to.Rich, color="Rich.to.Rich"), size=1)
+  geom_line(aes(y=Non.rich.to.Non.rich, color="Non-rich to Non-rich"), size=0.8)+
+  geom_line(aes(y=Non.rich.to.Rich, color="Non-rich to Rich"), size=0.8)+
+  geom_line(aes(y=Rich.to.Non.rich, color="Rich to Non-rich"), size=0.8)+
+  geom_line(aes(y=Rich.to.Rich, color="Rich to Rich"), size=0.8)+
+  theme_stata()+
+  theme(axis.title.x = element_text(size = 14),
+        plot.title = element_text(size = 16), axis.text.y = element_text(size = 10, angle=0),
+        axis.text.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12))+
+  labs(x = "Year", title="Share of Global Trade by the Income of Trading Partners",y="Percentage",
+       color="Income of Trade Partners")
 
 
