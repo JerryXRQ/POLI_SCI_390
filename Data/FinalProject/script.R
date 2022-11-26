@@ -96,9 +96,10 @@ gini_all <- gini_all[,!(names(gini_us) %in% drop)]
 gini_melt <- melt(gini_all, id='Country.Name')
 gini_melt <- select(gini_melt, c("Country.Name","variable","value"))
 names(gini_melt)[names(gini_melt) == "variable"] <- "Year"
-names(gini_melt)[names(gini_melt) == "value"] <- "Gini Index"
+names(gini_melt)[names(gini_melt) == "value"] <- "Gini"
 gini_melt$Year = substr(gini_melt$Year,2,5)
 gini_melt$Year = strtoi(gini_melt$Year)
+gini_melt$Gini = as.double(gini_melt$Gini)
 
 import_all <- read.csv("import-world.csv")
 
@@ -106,7 +107,50 @@ import_all <- import_all[,!(names(import_all) %in% drop)]
 import_melt <- melt(import_all, id='Country.Name')
 import_melt <- select(import_melt, c("Country.Name","variable","value"))
 names(import_melt)[names(import_melt) == "variable"] <- "Year"
-names(import_melt)[names(import_melt) == "value"] <- "Import as Percentage of GDP"
+names(import_melt)[names(import_melt) == "value"] <- "Import"
 import_melt$Year = substr(import_melt$Year,2,5)
 import_melt$Year = strtoi(import_melt$Year)
 
+inner_join(import_melt, gini_melt, 
+           by = c("Year" = "Year", "Country.Name" = "Country.Name")) -> complete_inequality
+country_set <- c('Germany', 'United States',"France",'United Kingdom','Japan','Australia')
+
+complete_inequality %>%
+  group_by(Country.Name)%>%
+  filter(all(Country.Name %in% country_set))%>%
+  drop_na()%>%
+  filter(Year>=1995)%>%
+  ggplot(aes(x=Year))+
+  facet_wrap(~ Country.Name, scales="free")+
+  geom_line(aes(y = Import,color='Import as Percentage of GDP'),size=0.8)+
+  geom_line(aes(y = Gini,color='Gini Index'),size=0.8)+
+  theme_stata()+
+  labs(x = "Year", title="Gini Index and Import of 6 Developed Countries after 1995", 
+       color = "Data Type")+
+  theme(axis.title.y=element_blank(), axis.title.x = element_text(size = 12))
+
+################### Plot 5 ###################
+trade_war_data <- read.csv("trade_war_data.csv")
+trade_war_data %>% mutate(time=as.Date(Date, "%d-%B-%Y"))->trade_war
+
+tariff_colors <- c("US Tariff on ROW exports" = "blue", "US Tariff on Chinese exports" = "blue", 
+                   "Chinese Tariff on ROW exports" = "red","Chinese Tariff on US exports"="red")
+line_type <- c("US Tariff on ROW exports" = "dashed", "US Tariff on Chinese exports" = "solid", 
+               "Chinese Tariff on ROW exports" = "dashed","Chinese Tariff on US exports"="solid")
+trade_war %>%
+  ggplot(aes(x=time))+
+  scale_color_manual(values = tariff_colors) +
+  scale_linetype_manual(values = line_type) +
+  geom_line(aes(y=US.tariffs.on.ROW.exports,color="US Tariff on ROW exports",linetype="US Tariff on ROW exports"))+
+  geom_line(aes(y=Chinese.tariffs.on.ROW.exports,color="Chinese Tariff on ROW exports",linetype="Chinese Tariff on ROW exports"))+
+  geom_line(aes(y=US.tariffs.on.Chinese.exports,color="US Tariff on Chinese exports",linetype="US Tariff on Chinese exports"))+
+  geom_line(aes(y=Chinese.tariffs.on.US.exports,color="Chinese Tariff on US exports",linetype="Chinese Tariff on US exports"))+
+  geom_vline(xintercept=as.Date("6-Jul-2018", "%d-%B-%Y"), linetype = "longdash",alpha=0.5)+
+  geom_vline(xintercept=as.Date("14-Feb-2020", "%d-%B-%Y"), linetype = "longdash",alpha=0.5)+
+  theme_stata()+
+  annotate(geom="text", x=as.Date("1-Oct-2018", "%d-%B-%Y"), y=24, label="Trade War", size=3.5) +
+  annotate(geom="text", x=as.Date("30-Jul-2020", "%d-%B-%Y"), y=24, label="Phase One Agreement", size=3.5) +
+  labs(x = "Time", title="US-China Trade War Tariff Plot",linetype = "Variable",
+       color = "Variable", y="Tariff Level")
+
+################### Plot 6 ###################

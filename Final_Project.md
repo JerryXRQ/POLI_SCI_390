@@ -22,6 +22,16 @@ The plot above presents this relationship more clearly. As the countries' mercha
 <img src="Figures/FinalProject/Plot4.png" width="900" />
 </p>
 
-Then we will try to answer the question of whether relying on cheap foreign labor led to a greater wealth gap in developed countries by eliminating jobs and forcing workers to take lower salaries. The measurement of inequality I have chosen here is the Gini index. The import as a percentage of GDP should be proportional to the impact of globalization on domestic manufacturing. As shown by the plot above, the Gini indices of the selected countries remain largely unchanged in the time period, despite countries like France and Germany having increasingly higher levels of import. A plausible explanation is that while globalization reduces the number of manufacturing jobs in those countries, it provides new opportunities in other industries. By encouraging workers to pursue jobs with higher skill requirements and wages, globalization can potentially have a positive impact on the distribution of income in a country.
+Then we will try to answer the question of whether relying on cheap foreign labor led to a greater wealth gap in developed countries by eliminating jobs and forcing workers to take lower salaries. In the paper "The China syndrome: Local labor market effects of import competition in the United States", the author pointed out that exposure to Chinese competition led to reduce wage and unemployment in local labor market. However, others argue that the competition encouraged US companies to adapt, which brings new jobs elsewhere in the country. I will try to take a more wholistic view here. The measurement of inequality I have chosen here is the Gini index. The import as a percentage of GDP should be proportional to the impact of globalization on domestic manufacturing. As shown by the plot above, the Gini indices of the selected countries remain largely unchanged in the time period, despite countries like France and Germany having increasingly higher levels of import. A plausible explanation is that while globalization reduces the number of manufacturing jobs in those countries, it provides new opportunities in other industries. By encouraging workers to pursue jobs with higher skill requirements and wages, globalization can potentially have a positive impact on the distribution of income in a country.
+
+<p align="center">
+<img src="Figures/FinalProject/Plot5.png" width="900" />
+</p>
+
+<p align="center">
+<img src="Figures/FinalProject/Plot6.png" width="900" />
+</p>
+
+Although the claims against globalization were poorly established, they did not prevent the Trump administration from starting a trade war with China. As seen by the plot above, after the start of the trade war, both sides raised the tariff on each other's exports significantly, especially when compared to the level they set for the rest of the world. As a result, US's export and import with China both started to drop. This decline sent a shockwave across the globe, threatening the world economy already on the verge of recession. As a result, many people started to question if the era of globalization is coming to an end.
 
 [Click Here to Return to Homepage](README.md)
