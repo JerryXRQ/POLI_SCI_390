@@ -1,8 +1,9 @@
+#install.packages("zoo") 
 packages <- c("tidyverse", "reshape2", "fauxnaif", "gganimate", "ggthemes",
               "stringr", "gridExtra", "gifski", "png", "ggrepel", "scales",
               "lubridate", "paletteer", "GGally", "systemfonts", "extrafont",
               "colorspace", "sf", "rnaturalearth", "ggmap",
-              "rnaturalearthdata", "paletteer", "stringr", "haven", "sp")
+              "rnaturalearthdata", "paletteer", "stringr", "haven", "sp","zoo")
 lapply(packages, require, character.only = TRUE)
 
 ################### Plot 1 ###################
@@ -150,7 +151,45 @@ trade_war %>%
   theme_stata()+
   annotate(geom="text", x=as.Date("1-Oct-2018", "%d-%B-%Y"), y=24, label="Trade War", size=3.5) +
   annotate(geom="text", x=as.Date("30-Jul-2020", "%d-%B-%Y"), y=24, label="Phase One Agreement", size=3.5) +
+  theme(axis.title.x = element_text(size = 14,),
+        plot.title = element_text(size = 16), axis.text.y = element_text(size = 10, angle=0),
+        axis.text.x = element_text(size = 12),
+        axis.title.y = element_text(margin = margin(r = 8),size = 12))+
   labs(x = "Time", title="US-China Trade War Tariff Plot",linetype = "Variable",
        color = "Variable", y="Tariff Level")
 
 ################### Plot 6 ###################
+trade_data <- read.csv("us-china-trade.csv")
+trade_data %>% mutate(time=as.yearmon(Month, "%B-%y"))->trade_data
+
+trade_data$Exports = as.double(gsub(",", "", trade_data$Exports))
+trade_data$Imports = as.double(gsub(",", "", trade_data$Imports))
+
+trade_data %>%
+  filter(time>=as.yearmon("Jan-18", "%B-%y"))%>%
+  filter(time<=as.yearmon("Jan-21", "%B-%y"))%>%
+  ggplot(aes(x=time))+
+  theme_stata()+
+  geom_bar(aes(y=Exports),stat='identity', colour="dodgerblue", fill="deepskyblue",alpha=0.5)+
+  theme(axis.title.x = element_text(size = 14,),
+        plot.title = element_text(size = 16), axis.text.y = element_text(size = 10, angle=0),
+        axis.text.x = element_text(size = 12),
+        axis.title.y = element_text(margin = margin(r = 8),size = 12))+
+  labs(x = "Time", title="US Export to China",y="Export in Millions of USD")-> Export_Plot
+
+trade_data %>%
+  filter(time>=as.yearmon("Jan-18", "%B-%y"))%>%
+  filter(time<=as.yearmon("Jan-21", "%B-%y"))%>%
+  ggplot(aes(x=time))+
+  theme_stata()+
+  geom_bar(aes(y=Imports),stat='identity', colour="dodgerblue", fill="deepskyblue",alpha=0.5)+
+  theme(axis.title.x = element_text(size = 14,),
+        plot.title = element_text(size = 16), axis.text.y = element_text(size = 10, angle=0),
+        axis.text.x = element_text(size = 12),
+        axis.title.y = element_text(margin = margin(r = 8),size = 12))+
+  labs(x = "Time", title="US Import from China",y="Import in Millions of USD")-> Import_Plot
+
+grid.arrange(Export_Plot, Import_Plot, nrow=2)
+
+################### Plot 7 ###################
+

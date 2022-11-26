@@ -34,4 +34,10 @@ Then we will try to answer the question of whether relying on cheap foreign labo
 
 Although the claims against globalization were poorly established, they did not prevent the Trump administration from starting a trade war with China. As seen by the plot above, after the start of the trade war, both sides raised the tariff on each other's exports significantly, especially when compared to the level they set for the rest of the world. As a result, US's export and import with China both started to drop. This decline sent a shockwave across the globe, threatening the world economy already on the verge of recession. As a result, many people started to question if the era of globalization is coming to an end.
 
+<p align="center">
+<img src="Figures/FinalProject/Plot7.png" width="900" />
+</p>
+
+However, there are some encouraging signs. Despite the higher tariff between US and China, their trade volume started to recover, showing their need for each other. Furthermore, as shown above, the number of bilateral trading partnerships is steadily increasing, and the number of non-trading countries is decreasing. While the voice is decoupling is loud, there is strong evidence supporting the strength of globalization. 
+
 [Click Here to Return to Homepage](README.md)
