@@ -46,4 +46,17 @@ However, there are some encouraging signs. Despite the higher tariff between US 
 
 Furthermore, trading between countries in the global south is gradually increasing. As those countries are less likely to engage in competitions like the current one between the US and China, we should expect fewer disturbances. Additionally, as countries like China lead the way in supplying developing countries with affordable clothing, electronics, and technologies, we should expect globalization to serve as a driving force for economic development and improvement of living standards.
 
+Sources
+Our World in Data
+https://ourworldindata.org/trade-and-globalization
+Census Bureau - Trade in Goods with China
+https://www.census.gov/foreign-trade/balance/c5700.html
+Peterson Institute for International Economics - US-China Trade War Tariffs: An Up-to-Date Chart
+https://www.piie.com/research/piie-charts/us-china-trade-war-tariffs-date-chart
+World Bank - Gini Coefficient
+https://data.worldbank.org/indicator/SI.POV.GINI
+World Bank - Import of Goods and Services
+https://data.worldbank.org/indicator/NE.IMP.GNFS.ZS
+
+
 [Click Here to Return to Homepage](README.md)
