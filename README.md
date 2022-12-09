@@ -18,12 +18,10 @@ Here is a link to [my LinkedIn](https://www.linkedin.com/in/jerry-xu-ruiqi/) if 
 
 [Visualization Blog 2](Visualization_Blog_2.md)
 
-[Visualization Blog 3](Visualization_Blog_3.md)
+[Visualization Blog 3 (Final Project Plan)](Final_Project_Plan.md)
 
 [Short Form Blog 1](Short_Form_Blog_1.md)
 
 [Short Form Blog 2](Short_Form_Blog_2.md)
-
-[Final Project Plan](Final_Project_Plan.md)
 
 [Final Project](Final_Project.md)
