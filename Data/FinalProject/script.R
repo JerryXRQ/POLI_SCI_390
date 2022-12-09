@@ -14,15 +14,16 @@ cost <- read.csv("real-transport-and-communication-costs.csv")
 export %>% 
   group_by(Year)%>%
   ggplot()+
-  labs(x="Year", y = "World Trade Relative to 1913 (With 1913 as 100%)",
-       title="Global Export Adjusted to Inflation Relative to 1913 Level")+
+  labs(x="Year", y="",
+       title="Growth of World Export",
+       subtitle="World Export Adjusted for Inflation Relative to 1913 (with 1913 as 100%)")+
   theme_stata()+scale_y_continuous(labels = function(x) paste0(x, "%"))+ 
   theme(axis.title.x = element_text(size = 14, margin = margin(t = 8)),
         plot.title = element_text(size = 16), axis.text.y = element_text(size = 10, angle=0),
         axis.text.x = element_text(size = 12),
         axis.title.y = element_text(margin = margin(r = 8),size = 12))+
   geom_line(size=1,aes(y=World.Trade..relative.to.1913...Federico.and.Tena.Junguito..2016..,x=Year))+
-  annotate(geom="text", x=1928, y=500, label="End of World War II", size=3) +
+  annotate(geom="text", x=1926, y=500, label="End of World War II", size=3) +
   geom_vline(xintercept=1945, linetype = "longdash")->Export_Plot
 
 colors <- c("International Calling Cost" = "blue", "Passenger Air Transport Cost" = "red", "Sea Freight Cost" = "orange")
@@ -35,7 +36,8 @@ cost %>%
   geom_line(size=0.8,aes(y=Passenger.air.transport.cost..relative.to.1930...OECD.Economic.Outlook..2007..,color="Passenger Air Transport Cost"))+
   geom_line(size=0.8,aes(y=Sea.freight.cost..relative.to.1930...OECD.Economic.Outlook..2007..,color="Sea Freight Cost"))+
   labs(x = "Year", y= "Cost to 1930", color = "Type of Costs",
-       title="Costs Related to Globalization Relative to 1930 Level") + 
+       title="Decline of Transportation and Communication Costs Relative to 1913",
+       caption="Sea freight cost comes from average international freight charges per tonne. Passenger air transport corresponds to the average airline revenue per passenger mile.\nInternational calls correspond to the cost of a three-minute call from New York to London") + 
   theme_stata()+
   theme(axis.title.x = element_text(size = 14,),
         plot.title = element_text(size = 16), axis.text.y = element_text(size = 10, angle=0),
@@ -71,13 +73,14 @@ export_mapping %>%
 income_trade <- read.csv("growth-of-income-and-trade.csv")
 
 income_trade %>% 
-  group_by(Entity) %>%
+  group_by(Year)%>%
   filter(Year>=2000)%>%
   filter(Year<=2014)%>%
   filter(Entity!="Liberia")%>%
   filter(Entity!="Qatar")%>%
   ggplot(aes(x=Value.of.global.merchandise.exports.as.a.share.of.GDP..Fouquin.and.Hugot..CEPII.2016..National.data.,y=GDP.per.capita))+
-  geom_point(size=2,color='red',alpha=0.5) + transition_time(Year) + theme_stata()+
+  geom_point(size=2,color='red',alpha=0.5)+
+  transition_time(Year) + theme_stata()+
   geom_text(aes(label = Entity),check_overlap = T, nudge_y = -800)+
   labs(x = "Value of Merchandise Export as Share of GDP", title="Percentage of Export in GDP versus GDP per capita of {frame_time}", 
        y= "GDP per capita") +
@@ -126,8 +129,8 @@ complete_inequality %>%
   geom_line(aes(y = Import,color='Import as Percentage of GDP'),size=0.8)+
   geom_line(aes(y = Gini,color='Gini Index'),size=0.8)+
   theme_stata()+
-  labs(x = "Year", title="Gini Index and Import of 6 Developed Countries after 1995", 
-       color = "Data Type")+
+  labs(x = "Year", title="Correlation between Gini Index and Import of 6 Developed Countries", 
+       subtitle="Import of Goods and Services Measured as Percentage of GDP", color = "Data Type")+
   theme(axis.title.y=element_blank(), axis.title.x = element_text(size = 12))
 
 ################### Plot 5 ###################
@@ -156,7 +159,8 @@ trade_war %>%
         axis.text.x = element_text(size = 12),
         axis.title.y = element_text(margin = margin(r = 8),size = 12))+
   labs(x = "Time", title="US-China Trade War Tariff Plot",linetype = "Variable",
-       color = "Variable", y="Tariff Level")
+       subtitle="US-China tariff rates toward each other and the rest of the world (ROW)",
+       color = "Variable", y="Tariff Level (%)")
 
 ################### Plot 6 ###################
 trade_data <- read.csv("us-china-trade.csv")
@@ -211,7 +215,7 @@ trade_partners %>%
         plot.title = element_text(size = 16), axis.text.y = element_text(size = 10, angle=0),
         axis.text.x = element_text(size = 12),
         axis.title.y = element_text(size = 12))+
-  labs(x = "Year", title="Share of Bilateral and Unilateral Trade",y="Percentage",
+  labs(x = "Year", title="Share of Bilateral and Unilateral Trade Partnerships around the World",y="Percentage",
        fill="Trade Partnership Type")
 
 ################### Plot 8 ###################
@@ -233,7 +237,7 @@ trade_type %>%
         plot.title = element_text(size = 16), axis.text.y = element_text(size = 10, angle=0),
         axis.text.x = element_text(size = 12),
         axis.title.y = element_text(size = 12))+
-  labs(x = "Year", title="Share of Global Trade by the Income of Trading Partners",y="Percentage",
+  labs(x = "Year", title="Share of Global Trade by the Income Level of Trading Partners",y="Share of Global Trade (%)",
        color="Income of Trade Partners")
 
 
