@@ -38,7 +38,7 @@ mock %>% ggplot(aes(fill=condition, y=value, x=country)) +
 ## My Visualization
 
 <p align="center">
-<img src="Data/VisBlog1/Plot.png" width="800" />
+<img src="Figures/VisBlog1/VisBlog1-4.png" width="800" />
 </p>
 
 This plot is made from the data published by European Center for Disease Prevention and Control. The dataset contains daily COVID cases for EU countries. I first grouped the data by month and year, then summed the number of infections. When creating the plot, I used color to distinguish between the three different years to account for incomplete months. By creating this plot, I hope to see if there is a seasonal pattern in the spread of COVID. From the figure, we see that when the weather is cold, the number of confirmed cases tends to be higher. This evidence supports the theory that increased indoor activity during winter leads to more confirmed cases.
