@@ -42,7 +42,9 @@ cost %>%
   theme(axis.title.x = element_text(size = 14,),
         plot.title = element_text(size = 16), axis.text.y = element_text(size = 10, angle=0),
         axis.text.x = element_text(size = 12),
-        axis.title.y = element_text(margin = margin(r = 8),size = 12))->Cost_Plot
+        axis.title.y = element_text(margin = margin(r = 8),size = 12),
+        legend.text = element_text(size=12),
+        plot.caption = element_text(size=10))->Cost_Plot
 grid.arrange(Export_Plot, Cost_Plot, nrow=2)
 
 ################### Plot 2 ###################
@@ -145,10 +147,10 @@ trade_war %>%
   ggplot(aes(x=time))+
   scale_color_manual(values = tariff_colors) +
   scale_linetype_manual(values = line_type) +
-  geom_line(aes(y=US.tariffs.on.ROW.exports,color="US Tariff on ROW exports",linetype="US Tariff on ROW exports"))+
-  geom_line(aes(y=Chinese.tariffs.on.ROW.exports,color="Chinese Tariff on ROW exports",linetype="Chinese Tariff on ROW exports"))+
-  geom_line(aes(y=US.tariffs.on.Chinese.exports,color="US Tariff on Chinese exports",linetype="US Tariff on Chinese exports"))+
-  geom_line(aes(y=Chinese.tariffs.on.US.exports,color="Chinese Tariff on US exports",linetype="Chinese Tariff on US exports"))+
+  geom_line(aes(y=US.tariffs.on.ROW.exports,color="US Tariff on ROW exports",linetype="US Tariff on ROW exports"),size=1)+
+  geom_line(aes(y=Chinese.tariffs.on.ROW.exports,color="Chinese Tariff on ROW exports",linetype="Chinese Tariff on ROW exports"),size=1)+
+  geom_line(aes(y=US.tariffs.on.Chinese.exports,color="US Tariff on Chinese exports",linetype="US Tariff on Chinese exports"),size=1)+
+  geom_line(aes(y=Chinese.tariffs.on.US.exports,color="Chinese Tariff on US exports",linetype="Chinese Tariff on US exports"),size=1)+
   geom_vline(xintercept=as.Date("6-Jul-2018", "%d-%B-%Y"), linetype = "longdash",alpha=0.5)+
   geom_vline(xintercept=as.Date("14-Feb-2020", "%d-%B-%Y"), linetype = "longdash",alpha=0.5)+
   theme_stata()+
