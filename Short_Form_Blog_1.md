@@ -1,4 +1,4 @@
-# Short Form Blogs 1
+# Short Form Blogs 1 - Climate Change
 
 After U.S. House of Representatives Speaker Nancy Pelosi's controversial trip to Taiwan, China suspended talks on climate cooperation with the U.S. This action again drew the attention of countries around the world as the U.S. and China are two of the biggest emitters of greenhouse gas. Indeed, climate change has always been a topic of debate. In this blog, I want to discuss the possible ways to view the countries' responsibilities in combating it. And as a result, how to distribute the burden across the world. Then, I will talk about the relevant factors based on what the EPA reported as the main contributors to greenhouse gas emissions. Specifically, that includes transportation, electricity generation, agriculture, and industry. I will detail the trends that might influence each of them to identify challenges and opportunities.
 

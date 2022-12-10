@@ -1,4 +1,4 @@
-# Visualization Blog 1
+# Visualization Blog 1 - Controversy
 
 ## Bad Visualization
 

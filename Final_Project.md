@@ -1,4 +1,4 @@
-# Final Project
+# Final Project - Globalization and Trade
 
 <p align="center">
 <img src="Figures/FinalProject/Plot1.png" width="900" />

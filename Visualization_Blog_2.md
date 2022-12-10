@@ -1,4 +1,4 @@
-# Visualization Blog 2
+# Visualization Blog 2 - Uncertainties
 
 ## Accounting for Uncertainties in Data
 
