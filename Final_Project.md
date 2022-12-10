@@ -22,14 +22,14 @@ The plot above presents this relationship more clearly. As the countries' mercha
 <img src="Figures/FinalProject/Plot4.png" width="900" />
 </p>
 
-Then we will try to answer the question of whether relying on cheap foreign labor led to a greater wealth gap in developed countries by eliminating jobs and forcing workers to take lower salaries. In the paper "The China syndrome: Local labor market effects of import competition in the United States" [2], the author pointed out that exposure to Chinese competition led to reduce wage and unemployment in local labor market. However, others argue that the competition encouraged US companies to adapt, which brings new jobs elsewhere in the country [7]. I will try to take a more wholistic view here. The measurement of inequality I have chosen here is the Gini index [5]. The import as a percentage of GDP should be proportional to the impact of globalization on domestic manufacturing [6]. As shown by the plot above, the Gini indices of the selected countries remain largely unchanged in the time period, despite countries like France and Germany having increasingly higher levels of import. A plausible explanation is that while globalization reduces the number of manufacturing jobs in those countries, it provides new opportunities in other industries. By encouraging workers to pursue jobs with higher skill requirements and wages, globalization can potentially have a positive impact on the distribution of income in a country.
+Then we will try to answer the question of whether relying on cheap foreign labor led to a greater wealth gap in developed countries by eliminating jobs and forcing workers to take lower salaries. In the paper "The China syndrome: Local labor market effects of import competition in the United States" [1], the author pointed out that exposure to Chinese competition led to reduce wage and unemployment in local labor market. However, others argue that the competition encouraged US companies to adapt, which brings new jobs elsewhere in the country [7]. I will try to take a more wholistic view here. The measurement of inequality I have chosen here is the Gini index [5]. The import as a percentage of GDP should be proportional to the impact of globalization on domestic manufacturing [6]. As shown by the plot above, the Gini indices of the selected countries remain largely unchanged in the time period, despite countries like France and Germany having increasingly higher levels of import. A plausible explanation is that while globalization reduces the number of manufacturing jobs in those countries, it provides new opportunities in other industries. By encouraging workers to pursue jobs with higher skill requirements and wages, globalization can potentially have a positive impact on the distribution of income in a country.
 
 <p align="center">
 <img src="Figures/FinalProject/Plot5.png" width="900" />
 </p>
 
 
-Although the claims against globalization were poorly established, they did not prevent the Trump administration from starting a trade war with China. As seen by the plot above [1], after the start of the trade war, both sides raised the tariff on each other's exports significantly, especially when compared to the level they set for the rest of the world. As a result, US's export and import with China both started to drop. This decline sent a shockwave across the globe, threatening the world economy already on the verge of recession. As a result, many people started to question if the era of globalization is coming to an end.
+Although the claims against globalization were poorly established, they did not prevent the Trump administration from starting a trade war with China. As seen by the plot above [3], after the start of the trade war, both sides raised the tariff on each other's exports significantly, especially when compared to the level they set for the rest of the world. As a result, US's export and import with China both started to drop. This decline sent a shockwave across the globe, threatening the world economy already on the verge of recession. As a result, many people started to question if the era of globalization is coming to an end.
 
 
 <p align="center">
@@ -50,12 +50,11 @@ Furthermore, trading between countries in the global south is gradually increasi
 
 ## Sources
 
-[1] (PIIE), Chad P. Bown. “US-China Trade War Tariffs: An up-to-Date Chart.” PIIE, 29 Aug. 2022, https://www.piie.com/research/piie-charts/us-china-trade-war-tariffs-date-chart.
+[1] Autor, David H, et al. “The China Syndrome: Local Labor Market Effects of Import Competition in the United States.” American Economic Association, https://pubs.aeaweb.org/doi/pdfplus/10.1257/aer.103.6.2121.
 
-[2] Autor, David H, et al. “The China Syndrome: Local Labor Market Effects of Import Competition in the United States.” American Economic Association, https://pubs.aeaweb.org/doi/pdfplus/10.1257/aer.103.6.2121.
+[2] Beltekian, Esteban Ortiz-Ospina and Diana. “Trade and Globalization.” Our World in Data, https://ourworldindata.org/trade-and-globalization.
 
-[3] Beltekian, Esteban Ortiz-Ospina and Diana. “Trade and Globalization.” Our World in Data, https://ourworldindata.org/trade-and-globalization.
-
+[3] Bown, Chad P. “US-China Trade War Tariffs: An up-to-Date Chart.” PIIE, 29 Aug. 2022, https://www.piie.com/research/piie-charts/us-china-trade-war-tariffs-date-chart. 
 
 [4] Bureau, US Census. “International Trade.” United States Census Bureau, 15 Apr. 2019, https://www.census.gov/foreign-trade/balance/c5700.html.
 
