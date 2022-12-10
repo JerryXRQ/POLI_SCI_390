@@ -45,6 +45,7 @@ vdem %>%
   theme(legend.position = "none")+
   geom_bar(stat='identity')+
   geom_errorbar(aes(ymin = lower_bound, ymax = upper_bound), width = 0.3,size=0.5)+ 
+  scale_fill_manual(values=c("#3B9AB2", "#78B7C5", "#EBCC2A", "#E1AF00", "orangered","red"))+
   theme(axis.title.x = element_text(size = 20, margin = margin(t = 8),),
         plot.title = element_text(size = 24), axis.text.y = element_text(size = 14),
         axis.text.x = element_text(size = 14),
@@ -76,6 +77,7 @@ vdem %>%
   geom_vline(aes(xintercept=average),
            color="blue", linetype="dashed", size=1) +
   facet_wrap(~ ranges, scales="free")+
+  scale_fill_manual(values=c("#3B9AB2", "#78B7C5", "#EBCC2A", "#E1AF00", "orangered","red"))+
   theme(axis.title.x = element_text(size = 18,margin = margin(t = 8)),axis.title.y = element_text(size = 18,margin = margin(r = 8)),
         plot.title = element_text(size = 24), axis.text.y = element_text(size = 14),strip.text.x = element_text(size = 15),
        axis.text.x = element_text(size = 14),legend.position = "none") ->plot2
