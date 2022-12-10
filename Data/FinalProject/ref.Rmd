@@ -1,0 +1,22 @@
+---
+title: "References"
+output: pdf_document
+date: "2022-11-11"
+author: "Jerry Xu"
+bibliography: packages.bib
+nocite: '@*'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(knitr)
+library(rcrossref)
+
+knitr::write_bib(c("tidyverse", "reshape2", "fauxnaif", "gganimate", "ggthemes",
+              "stringr", "gridExtra", "gifski", "png", "ggrepel", "scales",
+              "lubridate", "paletteer", "GGally", "systemfonts", "extrafont",
+              "colorspace", "sf", "rnaturalearth", "ggmap",
+              "rnaturalearthdata", "paletteer", "stringr", "haven", "sp","zoo"), width = 60, 
+                 file = "packages.bib")
+```
