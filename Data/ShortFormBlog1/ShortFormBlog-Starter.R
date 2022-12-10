@@ -118,11 +118,11 @@ world_oil %>%
   geom_vline(xintercept=1979, linetype = "longdash",)+
   annotate(geom="text", x=1983, y=0.5, label="Energy Crisis", size=3) +
   geom_vline(xintercept=2008, linetype = "longdash",)+
-  annotate(geom="text", x=2003, y=0.5, label="Great Depression", size=3) +
+  annotate(geom="text", x=2003, y=0.5, label="Great Recession", size=3) +
   geom_vline(xintercept=2019, linetype = "longdash",)+
-  annotate(geom="text", x=2014, y=0.5, label="COVID Pandemic", size=3) +
-  geom_line(aes(y=Oil.Consumption...Barrels/10^6,color='Oil Consumption'))+
-  geom_line(aes(y=Oil...Crude.prices.since.1861..2021...*coeff,color='Crude Oil Prices'))+
+  annotate(geom="text", x=2015, y=0.5, label="COVID Pandemic", size=3) +
+  geom_line(aes(y=Oil.Consumption...Barrels/10^6,color='Oil Consumption'),size=1)+
+  geom_line(aes(y=Oil...Crude.prices.since.1861..2021...*coeff,color='Crude Oil Prices'),size=1)+
   scale_y_continuous(
     name = "Oil Consumption (Million Cubic Meter)",
     sec.axis = sec_axis(~ . / coeff,name="Oil Price ($)")
@@ -170,7 +170,7 @@ world_ele_melt %>%
   group_by(Year)%>%
   drop_na()%>%
   ggplot(aes(fill=`Energy Source`, y=Quantity, x=Year)) + 
-  geom_area(position="stack", stat="identity")+
+  geom_area(position="stack", stat="identity",linetype = 1, size =0.5 ,colour="black")+
   labs(x="Year", 
        y="Amount of Electrity (TWh)",
        title="World Electricty Generation from 1990 to 2021 by Sources")->ele_amount_plot
@@ -180,7 +180,7 @@ world_ele_share_melt %>%
   group_by(Year)%>%
   drop_na()%>%
   ggplot(aes(color=`Energy Source`, y=Percentage, x=Year)) + 
-  geom_line(stat="identity")+
+  geom_line(stat="identity", size=1)+
   labs(x="Year", 
        y="Percentage of Electricity")->ele_share_plot
 
