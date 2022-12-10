@@ -48,25 +48,19 @@ Furthermore, trading between countries in the global south is gradually increasi
 
 ## Sources
 
-Our World in Data
+(PIIE), Chad P. Bown. “US-China Trade War Tariffs: An up-to-Date Chart.” PIIE, 29 Aug. 2022, https://www.piie.com/research/piie-charts/us-china-trade-war-tariffs-date-chart. 
 
-https://ourworldindata.org/trade-and-globalization
 
-Census Bureau - Trade in Goods with China
+Beltekian, Esteban Ortiz-Ospina and Diana. “Trade and Globalization.” Our World in Data, https://ourworldindata.org/trade-and-globalization. 
 
-https://www.census.gov/foreign-trade/balance/c5700.html
 
-Peterson Institute for International Economics - US-China Trade War Tariffs: An Up-to-Date Chart
+Bureau, US Census. “International Trade.” United States Census Bureau, 15 Apr. 2019, https://www.census.gov/foreign-trade/balance/c5700.html. 
 
-https://www.piie.com/research/piie-charts/us-china-trade-war-tariffs-date-chart
 
-World Bank - Gini Coefficient
+“Gini Index.” The World Bank, https://data.worldbank.org/indicator/SI.POV.GINI. 
 
-https://data.worldbank.org/indicator/SI.POV.GINI
 
-World Bank - Import of Goods and Services
-
-https://data.worldbank.org/indicator/NE.IMP.GNFS.ZS
+“Imports of Goods and Services (% of GDP).” The World Bank, https://data.worldbank.org/indicator/NE.IMP.GNFS.ZS. 
 
 
 [Click Here to View Package References](References/Final_Project.pdf)
